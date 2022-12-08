@@ -6,3 +6,4 @@ class User(models.Model):
     last_name = models.TextField(blank=True, null=True)
     age = models.PositiveIntegerField()
     city = models.TextField(default='Moscow')
+    sex = models.CharField(max_length=10, blank=False, null=True)
