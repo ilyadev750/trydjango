@@ -21,5 +21,6 @@ from pages import views
 urlpatterns = [
     path('', views.homepage, name='home'),
     path('another/', views.another_view),
+    path('newhome/', views.rendering),
     path('admin/', admin.site.urls),
 ]

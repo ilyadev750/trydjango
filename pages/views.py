@@ -8,3 +8,10 @@ def homepage(request, *args, **kwargs):
 
 def another_view(request, *args, **kwargs):
     return render(request, "another_info.html", {})
+
+def rendering(request, *args, **kwargs):
+    my_context = {
+        "my_text": "This is horosho!",
+        "number": 305
+    }
+    return render(request, "new_home.html", my_context)
