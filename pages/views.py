@@ -12,6 +12,7 @@ def another_view(request, *args, **kwargs):
 def rendering(request, *args, **kwargs):
     my_context = {
         "my_text": "This is horosho!",
-        "number": 305
+        "number": 305,
+        "items": [1,2,3,4,5]
     }
     return render(request, "new_home.html", my_context)

@@ -4,10 +4,16 @@
     <h1>Hello World</h1>
     <p>My second template</p>
 
-<p>
-{{ my_text }}
-{{ number }}
-</p>
+
+<ul>
+{% for item in items %}
+    {% if item == 2 %}
+        <li>{{item|add:50}}</li>
+    {% else %}
+        <li>{{forloop.counter}} - {{ item }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
 
 {% endblock %}
 
