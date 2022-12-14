@@ -10,7 +10,8 @@
     {% if item == 2 %}
         <li>{{item|add:50}}</li>
     {% else %}
-        <li>{{forloop.counter}} - {{ item }}</li>
+        <li>{{forloop.counter}} - "{{ item }}"</li>
+        {{ word|cut:"r" }}
     {% endif %}
 {% endfor %}
 </ul>
