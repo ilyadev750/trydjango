@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import UserForm
+from .forms import UserForm, RawUserForm
 from .models import User
 
 def user_details_view(request):
@@ -21,9 +21,13 @@ def user_details_view(request):
 #     }
 #     return render(request, "users/users_another_details.html", context)
 def user_new_view(request):
-    new_first_name = request.POST.get('first_name')
-    print(new_first_name)
-    context = {}
+    my_form = RawUserForm()
+    context = {
+        "form": my_form
+    }
+    # new_first_name = request.POST.get('first_name')
+    # print(new_first_name)
+    # context = {}
     return render(request, "users/users_another_details.html", context)
 
 # Create your views here.
