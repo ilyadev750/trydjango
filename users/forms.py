@@ -17,5 +17,5 @@ class RawUserForm(forms.Form):
     first_name = forms.CharField()
     last_name = forms.CharField()
     age = forms.IntegerField()
-    city = forms.CharField()
-    sex = forms.CharField()
+    city = forms.CharField(widget=forms.Textarea(attrs={}))
+    sex = forms.CharField(required=False)
