@@ -14,8 +14,15 @@ class UserForm(forms.ModelForm):
         ]
 
 class RawUserForm(forms.Form):
-    first_name = forms.CharField()
-    last_name = forms.CharField()
+    first_name = forms.CharField(widget=forms.TextInput(attrs={
+        "placeholder": "name"
+    }))
+    last_name = forms.CharField(label='Last name')
     age = forms.IntegerField()
-    city = forms.CharField(widget=forms.Textarea(attrs={}))
+    city = forms.CharField(widget=forms.Textarea(attrs={
+        "class": "new class",
+        "placeholder": "description",
+        "rows": 20,
+        "cols": 10
+    }))
     sex = forms.CharField(required=False)
